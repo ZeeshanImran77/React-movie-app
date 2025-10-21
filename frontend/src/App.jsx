@@ -1,10 +1,19 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import MovieCard from "./components/MovieCard";
+import Home from "./pages/Home";
+import Favourites from "./pages/Favourites";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <>
-      <MovieCard />
+      <NavBar />
+      <main className="main">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favourites" element={<Favourites />} />
+        </Routes>
+      </main>
     </>
   );
 }
